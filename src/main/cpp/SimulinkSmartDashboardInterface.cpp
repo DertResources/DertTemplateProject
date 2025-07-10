@@ -29,8 +29,10 @@ SimulinkSmartDashboardInterface::SimulinkSmartDashboardInterface()
  
 // Inports
     __GameState__Entry = NTtable_Inport->GetEntry("GameState");
+    __In1__Entry = NTtable_Inport->GetEntry("In1");
  
 // Outports
+    __Out1__Entry = NTtable_Outport->GetEntry("Out1");
     __Signal_one__Entry = NTtable_Outport->GetEntry("Signal_one");
     __Signal_two__Entry = NTtable_Outport->GetEntry("Signal_two");
  
@@ -43,7 +45,9 @@ void SimulinkSmartDashboardInterface::PostStepCallback()
 {
     // Inports
     __GameState__Entry.SetDouble(Code_Gen_Model_U.GameState);
+    __In1__Entry.SetDouble(Code_Gen_Model_U.In1);
     // Outports
+    __Out1__Entry.SetDouble(Code_Gen_Model_Y.Out1);
     __Signal_one__Entry.SetDouble(Code_Gen_Model_Y.Signal_one);
     __Signal_two__Entry.SetDouble(Code_Gen_Model_Y.Signal_two);
     // Test Points
