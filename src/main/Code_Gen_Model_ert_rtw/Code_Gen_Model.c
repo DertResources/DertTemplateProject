@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Code_Gen_Model'.
  *
- * Model version                  : 2.399
- * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Thu May  8 19:46:55 2025
+ * Model version                  : 5.3
+ * Simulink Coder version         : 25.1 (R2025a) 21-Nov-2024
+ * C/C++ source code generated on : Thu Jul 10 13:41:32 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM 7
@@ -36,6 +36,9 @@ real_T Teleop_Signal_two = 20.0;       /* Variable: Teleop_Signal_two
                                         * Referenced by: '<S8>/Constant1'
                                         */
 
+/* Block signals (default storage) */
+B_Code_Gen_Model_T Code_Gen_Model_B;
+
 /* External inputs (root inport signals with default storage) */
 ExtU_Code_Gen_Model_T Code_Gen_Model_U;
 
@@ -52,6 +55,7 @@ void Code_Gen_Model_step(void)
   real_T tmp;
 
   /* SwitchCase: '<S1>/Switch Case' incorporates:
+   *  Constant: '<S8>/Constant'
    *  Inport: '<Root>/GameState'
    */
   tmp = trunc(Code_Gen_Model_U.GameState);
@@ -105,11 +109,13 @@ void Code_Gen_Model_step(void)
     /* Outputs for IfAction SubSystem: '<S1>/Teleop' incorporates:
      *  ActionPort: '<S5>/Action Port'
      */
+    Code_Gen_Model_B.Signal_one = Teleop_Signal_one;
+
     /* Outport: '<Root>/Signal_one' incorporates:
      *  Constant: '<S8>/Constant'
      *  SignalConversion generated from: '<S5>/Signal_one'
      */
-    Code_Gen_Model_Y.Signal_one = Teleop_Signal_one;
+    Code_Gen_Model_Y.Signal_one = Code_Gen_Model_B.Signal_one;
 
     /* Outport: '<Root>/Signal_two' incorporates:
      *  Constant: '<S8>/Constant1'
@@ -146,10 +152,7 @@ void Code_Gen_Model_step(void)
 /* Model initialize function */
 void Code_Gen_Model_initialize(void)
 {
-  /* Registration code */
-
-  /* initialize non-finites */
-  rt_InitInfAndNaN(sizeof(real_T));
+  /* (no initialization code required) */
 }
 
 /* Model terminate function */

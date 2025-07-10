@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Code_Gen_Model'.
  *
- * Model version                  : 2.399
- * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Thu May  8 19:46:55 2025
+ * Model version                  : 5.3
+ * Simulink Coder version         : 25.1 (R2025a) 21-Nov-2024
+ * C/C++ source code generated on : Thu Jul 10 13:41:32 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM 7
@@ -17,15 +17,15 @@
  * Validation result: Not run
  */
 
-#ifndef RTW_HEADER_rtmodel_h_
-#define RTW_HEADER_rtmodel_h_
+#ifndef rtmodel_h_
+#define rtmodel_h_
 #include "Code_Gen_Model.h"
 
 /* Macros generated for backwards compatibility  */
 #ifndef rtmGetStopRequested
 #define rtmGetStopRequested(rtm)       ((void*) 0)
 #endif
-#endif                                 /* RTW_HEADER_rtmodel_h_ */
+#endif                                 /* rtmodel_h_ */
 
 /*
  * File trailer for generated code.

@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Code_Gen_Model'.
  *
- * Model version                  : 2.399
- * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Thu May  8 19:46:55 2025
+ * Model version                  : 5.3
+ * Simulink Coder version         : 25.1 (R2025a) 21-Nov-2024
+ * C/C++ source code generated on : Thu Jul 10 13:41:32 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: ARM Compatible->ARM 7
@@ -17,15 +17,16 @@
  * Validation result: Not run
  */
 
-#ifndef RTW_HEADER_Code_Gen_Model_h_
-#define RTW_HEADER_Code_Gen_Model_h_
+#ifndef Code_Gen_Model_h_
+#define Code_Gen_Model_h_
 #ifndef Code_Gen_Model_COMMON_INCLUDES_
 #define Code_Gen_Model_COMMON_INCLUDES_
 #include "rtwtypes.h"
+#include "rt_nonfinite.h"
+#include "math.h"
 #endif                                 /* Code_Gen_Model_COMMON_INCLUDES_ */
 
 #include "Code_Gen_Model_types.h"
-#include "rt_nonfinite.h"
 
 /* Macros for accessing real-time model data structure */
 #ifndef rtmGetErrorStatus
@@ -35,6 +36,11 @@
 #ifndef rtmSetErrorStatus
 #define rtmSetErrorStatus(rtm, val)    ((rtm)->errorStatus = (val))
 #endif
+
+/* Block signals (default storage) */
+typedef struct {
+  real_T Signal_one;                   /* '<S8>/Constant' */
+} B_Code_Gen_Model_T;
 
 /* External inputs (root inport signals with default storage) */
 typedef struct {
@@ -51,6 +57,9 @@ typedef struct {
 struct tag_RTM_Code_Gen_Model_T {
   const char_T * volatile errorStatus;
 };
+
+/* Block signals (default storage) */
+extern B_Code_Gen_Model_T Code_Gen_Model_B;
 
 /* External inputs (root inport signals with default storage) */
 extern ExtU_Code_Gen_Model_T Code_Gen_Model_U;
@@ -111,7 +120,7 @@ extern RT_MODEL_Code_Gen_Model_T *const Code_Gen_Model_M;
  * '<S7>'   : 'Code_Gen_Model/RoboRio Controls/Autonomous/Autonomous_sub'
  * '<S8>'   : 'Code_Gen_Model/RoboRio Controls/Teleop/Teleop_sub'
  */
-#endif                                 /* RTW_HEADER_Code_Gen_Model_h_ */
+#endif                                 /* Code_Gen_Model_h_ */
 
 /*
  * File trailer for generated code.
